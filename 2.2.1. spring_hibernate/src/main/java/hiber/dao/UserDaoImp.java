@@ -25,6 +25,8 @@ public class UserDaoImp implements UserDao {
       TypedQuery<User> query=sessionFactory.getCurrentSession().createQuery("from User");
       return query.getResultList();
    }
+
+   @Override
    public User getUserByCar(String model, int series) {
       return sessionFactory.getCurrentSession()
               .createQuery("from User u where u.userCar.model = :model" +
